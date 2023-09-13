@@ -1,0 +1,110 @@
+html, body {
+    height: 100%;
+    background-color: #f6f7f8 !important;
+}
+
+#app-container {
+    max-width: 700px;
+    border: 1px solid rgba(0, 0, 0, 0.175);
+    border-radius: 10px;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+#app-container h1 {
+    display: flex;
+    justify-content: center;
+}
+
+#app-container div.card {
+    margin: 16px 0;
+}
+
+#app-container div.card div.card-header {
+    background-color: #8d949e;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#app-container div.card div.card-body {
+    background-color: #dfe6ed
+}
+
+.report-container .year-report-container {
+    border: 1px solid rgba(0, 0, 0, 0.175);
+    border-radius: 10px;
+    padding: 16px;
+    margin: 22px 0;
+}
+.report-container .year-header-container {
+    display: flex;
+    justify-content: space-between;
+}
+.report-container .year-header-container .year-header-desc{
+    display: flex;
+    margin-bottom: 0;
+    align-content: center;
+    flex-wrap: wrap;
+}
+.report-container .year-header-container .year-header {
+    text-align: right;
+    font-size: 24px;
+    padding-right: 10px;
+    display: flex;
+}
+
+.report-container .month-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding-bottom: 6px;
+    margin: 20px 0;
+}
+
+.report-container .month-container .month-sum-row {
+    padding: 8px;
+    text-align: center;
+    border: 2px solid #cde3f9;
+    border-radius: 10px;
+    margin: 0 80px;
+}
+
+.report-container .month-header {
+    font-size: 18px;
+    padding: 12px 18px 5px;
+    margin: 0;
+}
+
+.report-container .cost-row .col {
+    text-align: center;
+}
+
+.report-container .category-costs-container {
+    padding: 0;
+}
+
+.report-container .category-sum-row {
+    margin: 6px 0;
+    background-color: #ebf1f7;
+}
+
+.report-container .category-sum-row .category-description-col {
+    padding: 5px 12px 5px 30px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.report-container .category-sum-row .category-description-col b {
+    margin: 0 8px;
+    font-weight: 500;
+}
+
+.report-container .category-sum-row .category-sum-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 28px;
+    font-weight: 500;
+}
