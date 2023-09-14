@@ -1,6 +1,11 @@
+/**
+ * 	Developers name:
+ * 	Rafael Ashurov 	312054711
+ * 	Matan Farchy	208948539
+ * **/
+
 import React from 'react';
-import {Alert, Button, Card, Col, Container, Row} from 'react-bootstrap';
-import idb from '../lib/idb';
+import {Alert, Card, Col, Container, Row} from 'react-bootstrap';
 
 const Report = ({costs}) => {
 	// Group costs by year, month, and category
@@ -79,11 +84,11 @@ const Report = ({costs}) => {
 												))}
 												<Row className="category-sum-row">
 													<Col sm={8} className="category-description-col">Total money spent
-														on
+														this month on
 														<b>
 															{category}
 														</b>
-														this month: </Col>
+													</Col>
 													<Col className="category-sum-col">
 														<u>
 															{groupsTotalSums[year][month][category].totalSum}

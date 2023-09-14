@@ -1,3 +1,9 @@
+/**
+ * 	Developers name:
+ * 	Rafael Ashurov 	312054711
+ * 	Matan Farchy	208948539
+ * **/
+
 import React, {useEffect, useState} from 'react';
 import {Col, Container, Row} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -33,9 +39,9 @@ function App() {
 
 	return (
 		<Container id="app-container">
-            <Row>
-                <h1>Costs Manager</h1>
-            </Row>
+			<Row>
+				<h1>Costs Manager</h1>
+			</Row>
 			<Row>
 				<Col>
 					<AddCost setCosts={setCosts}/>
@@ -43,7 +49,7 @@ function App() {
 			</Row>
 			<Row>
 				<Col>
-					<Report costs={costs} />
+					<Report costs={costs}/>
 				</Col>
 			</Row>
 		</Container>

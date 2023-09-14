@@ -1,6 +1,9 @@
 /**
- * Class representing a CostsDB
- */
+ * 	Developers name:
+ * 	Rafael Ashurov 	312054711
+ * 	Matan Farchy	208948539
+ * **/
+
 class CostsDB {
 	/**
 	 * Create a CostsDB instance

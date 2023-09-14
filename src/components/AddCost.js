@@ -1,3 +1,9 @@
+/**
+ * 	Developers name:
+ * 	Rafael Ashurov 	312054711
+ * 	Matan Farchy	208948539
+ * **/
+
 import React, {useState} from 'react';
 import {Button, Card, Col, FloatingLabel, Form, Row} from 'react-bootstrap';
 import idb from '../lib/idb';
@@ -38,7 +44,7 @@ const AddCost = ({setCosts}) => {
 				});
 				// Update the state to include the new cost.
 				setCosts((prevCosts) => [...prevCosts, newCost]);
-				alert('New cost added!')
+				alert('New cost added!');
 			} catch (error) {
 				alert(`Add cost failed: ${error}`);
 				console.error(`Add cost failed: ${error}`);
