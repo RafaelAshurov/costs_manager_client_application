@@ -57,8 +57,14 @@ async function openCostsDB(dbName, version) {
 		const request = indexedDB.open(dbName, version);
 
 		// Create object store if it doesn't exist
-		request.onupgradeneeded = (event) => createObjectStoreIfNotExist(event);
+		request.onupgradeneeded = function (event) {
+			const db = event.target.result;
+			if (!db.objectStoreNames.contains('costs')) {
+				db.createObjectStore('costs', {keyPath: 'id'});
+			}
+		};
 
+		// On success return a promise that resolves to a CostsDB instance
 		request.onsuccess = function (event) {
 			const db = event.target.result;
 			resolve(new CostsDB(db));
@@ -80,7 +86,7 @@ async function getAllCosts(dbName) {
 
 		// Open the database
 		const costsDbConnection = await openCostsDB('costsdb', 1);
-		const db = costsDbConnection.db
+		const db = costsDbConnection.db;
 
 		// Check if the "costs" object store exists
 		if (!db.objectStoreNames.contains('costs')) {
@@ -107,19 +113,6 @@ async function getAllCosts(dbName) {
 	});
 }
 
-/**
- * Create object store if it doesn't exist
- * @param {IDBVersionChangeEvent} event - The onupgradeneeded event
- */
-function createObjectStoreIfNotExist(event) {
-	const db = event.target.result;
-	// Check if the "costs" object store already exists
-	if (!db.objectStoreNames.contains('costs')) {
-		// Create an object store named "costs" and set "id" as the key path
-		db.createObjectStore('costs', {keyPath: 'id'});
-	}
-}
-
 
 // Expose the library functions as properties of the idb object
 const idb = {
@@ -127,5 +120,4 @@ const idb = {
 	getAllCosts
 };
 
-// Export the idb object for use in other scripts
 export default idb;
